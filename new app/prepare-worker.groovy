@@ -2,7 +2,7 @@ node{
     stage('Initialize'){
         withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-master-ssh-key', keyFileVariable: 'SSHKEY', passphraseVariable: '', usernameVariable: 'SSHUSERNAME')]) {
             sh '''
-                    ssh -i $SSHKEY root@104.131.114.15 yum install epel-release -y
+                    ssh -i $SSHKEY ec2-user@100.25.163.218 yum install epel-release -y
                 '''
         }
     } 
